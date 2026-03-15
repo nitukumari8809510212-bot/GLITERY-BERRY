@@ -22,3 +22,13 @@ const products = [
 {name:"Makeup Fixer",price:530,rating:"★★★★☆",image:"https://images.unsplash.com/photo-1612817288484-6f916006741a"}
 
 ]
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({name, price});
+    alert(name + " added to cart!");
+}
+
+function buyNow(name, price) {
+    alert("You are buying " + name + " for ₹" + price);
+}
