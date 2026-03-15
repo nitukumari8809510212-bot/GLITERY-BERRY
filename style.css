@@ -245,4 +245,8 @@ padding:8px 12px;
 margin-top:5px;
 border-radius:5px;
 cursor:pointer;
+}.price{
+color:#e91e63;
+font-size:18px;
+font-weight:bold;
 }
