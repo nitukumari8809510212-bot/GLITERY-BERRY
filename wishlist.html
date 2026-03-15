@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wishlist - Glitery Dust</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>❤️ Wishlist</h1>
+<a href="index.html">⬅ Back to Shop</a>
+</header>
+
+<section class="cartSection" id="wishlistItems"></section>
+
+<script>
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || []
+
+let container = document.getElementById("wishlistItems")
+
+if(wishlist.length === 0){
+container.innerHTML = "<h2>Your wishlist is empty</h2>"
+}
+
+wishlist.forEach(product=>{
+container.innerHTML += `
+<div class="cartItem">
+<img src="${product.image}" width="80">
+<h3>${product.name}</h3>
+<p>₹${product.price}</p>
+</div>
+`
+})
+</script>
+
+</body>
+</html>

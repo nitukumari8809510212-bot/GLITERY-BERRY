@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cart - Glitery Dust</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>🛒 Your Cart</h1>
+<a href="index.html">⬅ Back to Shop</a>
+</header>
+
+<section class="cartSection" id="cartItems"></section>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+let container = document.getElementById("cartItems")
+
+if(cart.length === 0){
+container.innerHTML = "<h2>Your cart is empty</h2>"
+}
+
+cart.forEach(product=>{
+container.innerHTML += `
+<div class="cartItem">
+<img src="${product.image}" width="80">
+<h3>${product.name}</h3>
+<p>₹${product.price}</p>
+</div>
+`
+})
+</script>
+
+</body>
+</html>
