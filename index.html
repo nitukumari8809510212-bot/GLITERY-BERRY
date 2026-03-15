@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -6,17 +7,177 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Glitery berry - Beauty Store</title>
+<title>Glitery Dust - Beauty Store</title>
 
 <link rel="stylesheet" href="style.css">
 
-</head><link rel="stylesheet" href="style.css">
-<script src="products.js"></script>
-<script src="app.js"></script>
+</head>
+
+<body>
+
+<header class="header">
+
+<h1 class="logo">💄 Glitery Dust</h1>
+
 <div class="searchBox">
 
-<input type="text" id="searchBar" placeholder="Search makeup..." onkeyup="liveSearch()">
+<input type="text"
+id="searchBar"
+placeholder="Search makeup products..."
+onkeyup="liveSearch()">
 
 <div id="searchResults"></div>
 
 </div>
+
+<nav>
+
+<a href="index.html">Home</a> <a href="cart.html">Cart 🛒</a> <a href="wishlist.html">Wishlist ❤️</a> <a href="login.html">Login 🔐</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="slider">
+
+<img class="slide"
+src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+
+<img class="slide"
+src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+
+<img class="slide"
+src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
+
+</div>
+
+<div class="heroText">
+
+<h2>Discover Luxury Makeup</h2>
+
+<p>Explore the latest beauty products</p>
+
+<button onclick="scrollToProducts()">Shop Now</button>
+
+</div>
+
+</section>
+
+<section id="productsSection">
+
+<h2 class="sectionTitle">Trending Makeup</h2>
+
+<div id="productContainer" class="products"></div>
+
+</section>
+
+<footer class="footer">
+
+<p>© 2026 Glitery berry Beauty Store</p>
+
+</footer>
+
+<script src="products.js"></script>
+
+<script src="app.js"></script>
+
+<script>
+
+/* BANNER SLIDER */
+
+let slideIndex = 0;
+
+function slider(){
+
+let slides = document.getElementsByClassName("slide");
+
+for(let i = 0; i < slides.length; i++){
+
+slides[i].style.display = "none";
+
+}
+
+slideIndex++;
+
+if(slideIndex > slides.length){
+
+slideIndex = 1;
+
+}
+
+slides[slideIndex-1].style.display = "block";
+
+setTimeout(slider,3000);
+
+}
+
+slider();
+
+
+
+/* SCROLL BUTTON */
+
+function scrollToProducts(){
+
+document.getElementById("productsSection")
+.scrollIntoView({behavior:"smooth"});
+
+}
+
+
+
+/* SEARCH SYSTEM */
+
+function liveSearch(){
+
+let input =
+document.getElementById("searchBar")
+.value.toLowerCase();
+
+let resultBox =
+document.getElementById("searchResults");
+
+resultBox.innerHTML = "";
+
+if(input.length === 0){
+
+resultBox.style.display = "none";
+
+return;
+
+}
+
+products.forEach((product)=>{
+
+if(product.name
+.toLowerCase()
+.includes(input)){
+
+resultBox.style.display = "block";
+
+resultBox.innerHTML += `
+
+<div class="searchItem">
+
+<img src="${product.image}" width="40">
+
+<span>${product.name}</span>
+
+<p>₹${product.price}</p>
+
+</div>
+
+`;
+
+}
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
