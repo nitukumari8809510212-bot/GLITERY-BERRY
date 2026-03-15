@@ -5,6 +5,10 @@ function loadProducts(){
 
 const container = document.getElementById("productContainer")
 
+if(!container) return
+
+container.innerHTML = ""
+
 products.forEach((p,index)=>{
 
 container.innerHTML += `
@@ -39,7 +43,7 @@ cart.push(products[i])
 
 localStorage.setItem("cart",JSON.stringify(cart))
 
-alert("Added to cart")
+alert("Added to cart 🛒")
 
 }
 
@@ -49,7 +53,7 @@ wishlist.push(products[i])
 
 localStorage.setItem("wishlist",JSON.stringify(wishlist))
 
-alert("Added to wishlist")
+alert("Added to wishlist ❤️")
 
 }
 
@@ -65,28 +69,13 @@ alert("Order placed. Proceed to payment.")
 
 }
 
-function searchProducts(){
-
-let input=document.getElementById("searchBar").value.toLowerCase()
-
-let cards=document.getElementsByClassName("product")
-
-for(let i=0;i<products.length;i++){
-
-let name=products[i].name.toLowerCase()
-
-cards[i].style.display=name.includes(input)?"block":"none"
-
-}
-
-}
-
-loadProducts()
 function liveSearch(){
 
 let input = document.getElementById("searchBar").value.toLowerCase()
 
 let resultBox = document.getElementById("searchResults")
+
+if(!resultBox) return
 
 resultBox.innerHTML = ""
 
@@ -108,7 +97,7 @@ resultBox.innerHTML += `
 
 <div class="searchItem">
 
-<img src="${product.image}">
+<img src="${product.image}" width="40">
 
 <span>${product.name}</span>
 
@@ -123,3 +112,5 @@ resultBox.innerHTML += `
 })
 
 }
+
+loadProducts()
