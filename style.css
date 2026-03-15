@@ -1,0 +1,212 @@
+body{
+margin:0;
+font-family:Arial;
+background:#fff4f8;
+}
+
+header{
+background:#ff2e93;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+}
+
+#searchBar{
+padding:8px;
+border-radius:5px;
+border:none;
+}
+
+.slider img{
+width:100%;
+height:350px;
+object-fit:cover;
+}
+
+.sectionTitle{
+text-align:center;
+margin-top:30px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:40px;
+}
+
+.product{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.product img{
+width:150px;
+transition:0.3s;
+}
+
+.product img:hover{
+transform:scale(1.2);
+}
+
+.rating{
+color:gold;
+}
+
+button{
+background:#ff2e93;
+border:none;
+color:white;
+padding:10px;
+margin:5px;
+border-radius:5px;
+cursor:pointer;
+}
+/* SEARCH BOX */
+
+.searchBox{
+position:relative;
+width:300px;
+}
+
+#searchBar{
+width:100%;
+padding:10px;
+border-radius:6px;
+border:none;
+outline:none;
+}
+
+/* SEARCH RESULT DROPDOWN */
+
+#searchResults{
+
+position:absolute;
+top:45px;
+left:0;
+background:white;
+width:100%;
+max-height:300px;
+overflow-y:auto;
+box-shadow:0 5px 10px rgba(0,0,0,0.2);
+display:none;
+z-index:100;
+
+}
+
+.searchItem{
+
+display:flex;
+align-items:center;
+gap:10px;
+padding:10px;
+border-bottom:1px solid #eee;
+cursor:pointer;
+
+}
+
+.searchItem img{
+
+width:40px;
+height:40px;
+object-fit:cover;
+border-radius:5px;
+
+}
+
+.searchItem:hover{
+
+background:#fff0f6;
+
+}.cartSection{
+
+padding:40px;
+text-align:center;
+
+}
+
+.cartItem{
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:20px;
+background:white;
+padding:15px;
+margin:10px auto;
+width:60%;
+border-radius:8px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+
+}
+
+.checkoutBtn{
+
+padding:12px 20px;
+background:#ff2e93;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+
+}
+.adminSection{
+
+padding:40px;
+text-align:center;
+
+}
+
+.adminSection input{
+
+display:block;
+width:300px;
+margin:10px auto;
+padding:10px;
+
+}
+
+.adminSection button{
+
+padding:12px 20px;
+background:#ff2e93;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+
+}
+.loginSection,
+.trackSection{
+
+text-align:center;
+padding:40px;
+
+}
+
+.loginSection input,
+.trackSection input{
+
+display:block;
+width:250px;
+margin:10px auto;
+padding:10px;
+
+}
+
+.reviewSection{
+
+margin-top:20px;
+
+}
